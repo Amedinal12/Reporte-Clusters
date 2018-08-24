@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México</title>
+  <meta name="description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México" />
+  
+  <meta name="twitter:description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster" />
+  
+
+<meta name="author" content="Act. Andres Antonio Medina Landeros">
+
+
+<meta name="date" content="2018-08-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="introduccion.html">
+<link rel="next" href="clusters-jerarquicos.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Analisis de cluster aplicado en la segmentacion del mercado para la tipificacion de los productos de vivienda: El caso de Mexico</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="abstracto.html"><a href="abstracto.html"><i class="fa fa-check"></i><b>1</b> Abstracto</a></li>
+<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introducción</a></li>
+<li class="chapter" data-level="3" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>3</b> Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="datos.html"><a href="datos.html#descripcion-de-las-variables"><i class="fa fa-check"></i><b>3.1</b> Descripción de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html"><i class="fa fa-check"></i><b>4</b> Clústers Jerárquicos</a><ul>
+<li class="chapter" data-level="4.1" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-socio-demograficas-por-cluster"><i class="fa fa-check"></i><b>4.1</b> Exploración de las características socio-demográficas por clúster</a></li>
+<li class="chapter" data-level="4.2" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-economico-financieras-por-cluster"><i class="fa fa-check"></i><b>4.2</b> Exploración de las caracteristicas económico-financieras por clúster</a></li>
+<li class="chapter" data-level="4.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-de-la-vivienda-por-cluster"><i class="fa fa-check"></i><b>4.3</b> Exploración de las características de la vivienda por clúster</a></li>
+<li class="chapter" data-level="4.4" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#conclusiones-del-agrupamiento-por-medio-de-un-modelo-jerarquico"><i class="fa fa-check"></i><b>4.4</b> Conclusiones del agrupamiento por medio de un modelo jerárquico</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-1"><i class="fa fa-check"></i><b>4.4.1</b> Grupo 1</a></li>
+<li class="chapter" data-level="4.4.2" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-2"><i class="fa fa-check"></i><b>4.4.2</b> Grupo 2</a></li>
+<li class="chapter" data-level="4.4.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-3"><i class="fa fa-check"></i><b>4.4.3</b> Grupo 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><i class="fa fa-check"></i><b>5</b> Clústers por el metodo de Particiones alrededor de medioides</a><ul>
+<li class="chapter" data-level="5.1" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#estimacion-del-numero-de-grupo-por-el-metodo-de-las-silueta-promedio"><i class="fa fa-check"></i><b>5.1</b> Estimación del número de grupo por el método de las silueta promedio</a></li>
+<li class="chapter" data-level="5.2" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#exploracion-de-las-caracteristicas-socio-demograficas-por-cluster-1"><i class="fa fa-check"></i><b>5.2</b> Exploración de las características socio-demográficas por clúster</a></li>
+<li class="chapter" data-level="5.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-economico-financieras-por-cluster"><i class="fa fa-check"></i><b>5.3</b> Exploración de las características económico-financieras por clúster</a></li>
+<li class="chapter" data-level="5.4" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#exploracion-de-las-caracteristicas-de-la-vivienda-por-cluster-1"><i class="fa fa-check"></i><b>5.4</b> Exploración de las características de la vivienda por clúster</a></li>
+<li class="chapter" data-level="5.5" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#conclusiones-del-agrupamiento-por-medio-de-particiones-alrededor-de-medioides"><i class="fa fa-check"></i><b>5.5</b> Conclusiones del agrupamiento por medio de particiones alrededor de medioides</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#grupo-1-1"><i class="fa fa-check"></i><b>5.5.1</b> Grupo 1</a></li>
+<li class="chapter" data-level="5.5.2" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#grupo-2-1"><i class="fa fa-check"></i><b>5.5.2</b> Grupo 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>6</b> Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/AmedinalUrbi" target="blank">Publicado desde AmedinalUrbi</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="datos" class="section level1">
+<h1><span class="header-section-number">3</span> Datos</h1>
+<p>Los datos utilizados en este proyecto son los proporcionados por la Encuesta Nacional Ingresos y Gastos de los hogares en su edición 2016 (ENIGH 2016). El objetivo de esta encuesta es el de proporcionar un panorama estadístico del comportamiento de los ingresos y gastos de los hogares en cuanto a su monto, procedencia y distribución, adicionalmente la encuesta ofrece caracteristicas ocupacionales y socio demográficas de la infraestructura de la vivienda y el equipamiento del hogar.</p>
+<p>El periodo de levantamiento de la encuesta fue del 21 de Agosto del 2016 al 28 de noviembre del 2016. La cobertura geografica de la encuesta es a nivel nacional.</p>
+<p>Para conformar la base de datos de la investigacion utilice el archivo concentradohogar.csv y el archivo viviendas.csv que se encuentra disponible en la pestaña de microdatos en el sitio web de la <a href="http://www.beta.inegi.org.mx/proyectos/enchogares/regulares/enigh/nc/2016/">ENIGH</a></p>
+<div id="descripcion-de-las-variables" class="section level2">
+<h2><span class="header-section-number">3.1</span> Descripción de las variables</h2>
+<p>A continuación, presento una tabla de las variables que conforman la base de datos utilizada en este análisis, el número significa la columna en la que se encuentran en el archivo,el archivo en el que se encuentran, su nombre, su etiqueta, su categoria (si es numérica o categórica) y en caso de ser categórica el número de niveles que la conforman, acto seguido, presento varias tablas que contienen los niveles de las variables categóricas incluidas en el estudio. El archivo se compone de 70,311 unidades observacionales, de las cuales seleccioné 10,596 mediante un muestreo aleatorio.</p>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-13">Table 3.1: </span>Tabla de las variables utilizadas en el estudio
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Numero
+</th>
+<th style="text-align:left;">
+Tabla
+</th>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+<th style="text-align:left;">
+Unidades
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+folioviv
+</td>
+<td style="text-align:left;">
+Folio de la vivienda
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+sexo_jefe
+</td>
+<td style="text-align:left;">
+Sexo del jefe de familia
+</td>
+<td style="text-align:left;">
+categorica con niveles 0 o 1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+edad_jefe
+</td>
+<td style="text-align:left;">
+Edad del jefe de familia
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+educa_jefe
+</td>
+<td style="text-align:left;">
+Educacion formal del jefe de familia
+</td>
+<td style="text-align:left;">
+categorica con niveles de 1 a 11
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+tot_integ
+</td>
+<td style="text-align:left;">
+Numero de integrantes del hogar
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+ing_cor
+</td>
+<td style="text-align:left;">
+Ingreso trimestral de la unidad de observacion
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+58
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+gasto_mon
+</td>
+<td style="text-align:left;">
+Gasto trimestral de la unidad de observacion
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+vivienda
+</td>
+<td style="text-align:left;">
+Gasto mensual en vivienda
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+117
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+cuota_viv
+</td>
+<td style="text-align:left;">
+Cuota por vivienda
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+118
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+mater_serv
+</td>
+<td style="text-align:left;">
+Gasto en servicios y materiales para el hogar por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+alimentos
+</td>
+<td style="text-align:left;">
+Gasto en alimentos consumidos por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+77
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+vesti_calz
+</td>
+<td style="text-align:left;">
+Gasto en vestido y calzado por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+energia
+</td>
+<td style="text-align:left;">
+Gasto en energ愼㸱a por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+limpieza
+</td>
+<td style="text-align:left;">
+Gasto en servicios de limpieza por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+cuidados
+</td>
+<td style="text-align:left;">
+Gasto en cuidados de la casa por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+salud
+</td>
+<td style="text-align:left;">
+Gasto en servicios de salud por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+transporte
+</td>
+<td style="text-align:left;">
+Gasto en servicios de transporte por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+comunica
+</td>
+<td style="text-align:left;">
+Gasto en telecomunicaciones por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+educacion
+</td>
+<td style="text-align:left;">
+Gasto en servicios educativos por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+esparci
+</td>
+<td style="text-align:left;">
+Gasto en servicios de esparcimiento por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:left;">
+CONCENTRADO_HOGAR
+</td>
+<td style="text-align:left;">
+personales
+</td>
+<td style="text-align:left;">
+Gasto en servicios de cuidado personal por el seno familiar de forma trimestral
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+tipo_viv
+</td>
+<td style="text-align:left;">
+Tipo de vivienda
+</td>
+<td style="text-align:left;">
+categorica con niveles de 1 a 6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+antiguedad
+</td>
+<td style="text-align:left;">
+Antiguedad de vivienda
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+cocina
+</td>
+<td style="text-align:left;">
+Disponibilidad de cocina en la vivienda
+</td>
+<td style="text-align:left;">
+categorica con niveles de 1 a 2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+cuarto_dorm
+</td>
+<td style="text-align:left;">
+Numero de dormitorios en la vivienda
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+num_cuart
+</td>
+<td style="text-align:left;">
+Numero de cuartos disponibles en la vivienda
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+tenencia
+</td>
+<td style="text-align:left;">
+Tipo de tenencia de la casa
+</td>
+<td style="text-align:left;">
+categorica con niveles de 1 a 6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+bano_comp
+</td>
+<td style="text-align:left;">
+Numero de banos completos en la vivienda
+</td>
+<td style="text-align:left;">
+numerica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+mat_pared
+</td>
+<td style="text-align:left;">
+Material predominante de las paredes de la viviedna
+</td>
+<td style="text-align:left;">
+categorica con niveles de 1 a 8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+mat_pisos
+</td>
+<td style="text-align:left;">
+Material predominante de los pisos de la vivienda
+</td>
+<td style="text-align:left;">
+categorica con niveles de 1 a 3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+disp_elect
+</td>
+<td style="text-align:left;">
+Disponibilidad de energia electrica en la vivienda
+</td>
+<td style="text-align:left;">
+categorica con niveles de 1 a 2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:left;">
+VIVIENDA
+</td>
+<td style="text-align:left;">
+combustible
+</td>
+<td style="text-align:left;">
+Tipo de combustible principal para la vivienda
+</td>
+<td style="text-align:left;">
+categorica con niveles de 1 a 6
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-14">Table 3.2: </span>niveles de la variable categorica sexo del jefe de familia.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+Mujer
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Hombre
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-15">Table 3.3: </span>niveles de la variable categorica del nivel de educación formal del jefe de familia.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+sin instruccion
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+preescolar
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+primaria incompleta
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+primaria completa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+secundaria incompleta
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+secundaria completa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+preparatoria incompleta
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+preparatoria completa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+profesional incompleta
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+profesional completa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+posgrado
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-16">Table 3.4: </span>niveles de la variable categorica del tipo de vivienda.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Casa independiente
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Departamento en edificio
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Vivienda en edificio
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Vivienda en cuarto de Azotea
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Local no construido para habitacion
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-17">Table 3.5: </span>niveles de la variable categorica de la disponibilidad de cocina.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+si
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+no
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-18">Table 3.6: </span>niveles de la variable categorica del tipo de tenencia.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Rentada
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Prestada
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Propia pero estan pagandola
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Propia
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Intestada o en litigio
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Otra situacion
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-19">Table 3.7: </span> niveles de la variable categorica del material de las paredes.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Material de desecho
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Lamina de carton
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Lamina de asbesto o metalica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+carrizo bambu o palma
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Embarro o bajareque
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Madera
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Adobe
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Tabique, Ladrillo, block, piedra, cantera,cemento o concreto
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-20">Table 3.8: </span> niveles de la variable categorica del material de los pisos.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Tierra
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Cemento o firme
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Madera, mosaico u otro recumbrimiento
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-21">Table 3.9: </span> niveles de la variable categorica de la disponibilidad de energía eléctrica.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+si
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+no
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-22">Table 3.10: </span> niveles de la variable categorica del tipo de combustible principal.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Valor
+</th>
+<th style="text-align:left;">
+Etiqueta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Lena
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Carbon
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Gas de Tanque
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Gas natural o de tuberia
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Electricidad
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Otro combustible
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduccion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="clusters-jerarquicos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03Datos.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

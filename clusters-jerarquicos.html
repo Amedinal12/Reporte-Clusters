@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México</title>
+  <meta name="description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México" />
+  
+  <meta name="twitter:description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster" />
+  
+
+<meta name="author" content="Act. Andres Antonio Medina Landeros">
+
+
+<meta name="date" content="2018-08-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="datos.html">
+<link rel="next" href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Analisis de cluster aplicado en la segmentacion del mercado para la tipificacion de los productos de vivienda: El caso de Mexico</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="abstracto.html"><a href="abstracto.html"><i class="fa fa-check"></i><b>1</b> Abstracto</a></li>
+<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introducción</a></li>
+<li class="chapter" data-level="3" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>3</b> Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="datos.html"><a href="datos.html#descripcion-de-las-variables"><i class="fa fa-check"></i><b>3.1</b> Descripción de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html"><i class="fa fa-check"></i><b>4</b> Clústers Jerárquicos</a><ul>
+<li class="chapter" data-level="4.1" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-socio-demograficas-por-cluster"><i class="fa fa-check"></i><b>4.1</b> Exploración de las características socio-demográficas por clúster</a></li>
+<li class="chapter" data-level="4.2" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-economico-financieras-por-cluster"><i class="fa fa-check"></i><b>4.2</b> Exploración de las caracteristicas económico-financieras por clúster</a></li>
+<li class="chapter" data-level="4.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-de-la-vivienda-por-cluster"><i class="fa fa-check"></i><b>4.3</b> Exploración de las características de la vivienda por clúster</a></li>
+<li class="chapter" data-level="4.4" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#conclusiones-del-agrupamiento-por-medio-de-un-modelo-jerarquico"><i class="fa fa-check"></i><b>4.4</b> Conclusiones del agrupamiento por medio de un modelo jerárquico</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-1"><i class="fa fa-check"></i><b>4.4.1</b> Grupo 1</a></li>
+<li class="chapter" data-level="4.4.2" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-2"><i class="fa fa-check"></i><b>4.4.2</b> Grupo 2</a></li>
+<li class="chapter" data-level="4.4.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-3"><i class="fa fa-check"></i><b>4.4.3</b> Grupo 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><i class="fa fa-check"></i><b>5</b> Clústers por el metodo de Particiones alrededor de medioides</a><ul>
+<li class="chapter" data-level="5.1" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#estimacion-del-numero-de-grupo-por-el-metodo-de-las-silueta-promedio"><i class="fa fa-check"></i><b>5.1</b> Estimación del número de grupo por el método de las silueta promedio</a></li>
+<li class="chapter" data-level="5.2" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#exploracion-de-las-caracteristicas-socio-demograficas-por-cluster-1"><i class="fa fa-check"></i><b>5.2</b> Exploración de las características socio-demográficas por clúster</a></li>
+<li class="chapter" data-level="5.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-economico-financieras-por-cluster"><i class="fa fa-check"></i><b>5.3</b> Exploración de las características económico-financieras por clúster</a></li>
+<li class="chapter" data-level="5.4" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#exploracion-de-las-caracteristicas-de-la-vivienda-por-cluster-1"><i class="fa fa-check"></i><b>5.4</b> Exploración de las características de la vivienda por clúster</a></li>
+<li class="chapter" data-level="5.5" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#conclusiones-del-agrupamiento-por-medio-de-particiones-alrededor-de-medioides"><i class="fa fa-check"></i><b>5.5</b> Conclusiones del agrupamiento por medio de particiones alrededor de medioides</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#grupo-1-1"><i class="fa fa-check"></i><b>5.5.1</b> Grupo 1</a></li>
+<li class="chapter" data-level="5.5.2" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#grupo-2-1"><i class="fa fa-check"></i><b>5.5.2</b> Grupo 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>6</b> Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/AmedinalUrbi" target="blank">Publicado desde AmedinalUrbi</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="clusters-jerarquicos" class="section level1">
+<h1><span class="header-section-number">4</span> Clústers Jerárquicos</h1>
+<p>El objetivo general de estos modelos es la de construir agrupamientos ordenados o jerárquicos.</p>
+<p>El agrupamiento jerárquico puede ser divivido en dos vertientes</p>
+<ul>
+<li><p>Algoritmos Aglomerativos: Este es un acercamiento ascendente, aquí se computan las disimilitudes para hacer las comparaciones efectivas. Cada observación comienza en su propio grupo, en parejas, se agrupan dado algún criterio de distancia mínima,y se forman los grupos. Este proceso se repite de froma iterativa conforme se asciende en la jerarquía hasta que todos los datos terminan agrupados en un solo clúster.</p></li>
+<li><p>Algoritmos Divisivos: Este es un acercamiento descendente, todas las observaciones comienzan en un grupo, y las divisiones se realizan en lo que uno baja en la jerarquía.</p></li>
+</ul>
+<p>El acercamiento que utilice en el desarrollo de los clusters jerarquicos es de un algoritmo aglomerativo.</p>
+<p>La distancia que utilicé es la distancia de gower que es una medida de distancia para bases de datos que contienen variables mixtas. Este coeficiente de distancia se define como: <span class="math display">\[\ d_{i,j} =  \frac{1}{p} \sum_{i = 1}^{p} d_{i,j}^{(f)}   \]</span></p>
+<ul>
+<li><p>Dónde la función f representa la clase a la que pertenece la variable (categorica, continua, ordinal)</p></li>
+<li><p>Para parejas datos binarios usa alguna medida apropiada como el índice de Jaccard, que se define como:</p></li>
+</ul>
+<p><span class="math display">\[ \ d_{i,j} =  \frac{|A \cap B|}{|A \cup B|} \]</span></p>
+<ul>
+<li>Para parejas de datos continuos usa una distancia redimensionada por el intervalo de la variable definida como</li>
+</ul>
+<p><span class="math display">\[\ d_{i,j}^{(f)} = \frac{|x_{i,f} - x_{j,f} |}{R_{f}}  \]</span></p>
+<p>y <span class="math inline">\(\ x_{k,f}\)</span> es el valor del k-ésimo objeto en de la variable f y <span class="math inline">\(\ R_{f}\)</span> es el rango de la variable f</p>
+<ul>
+<li>Para parejas de variables ordinales usa rangos normalizados.</li>
+</ul>
+<p>La función liga que utilicé es es la función liga de ward, la cual minimiza la varianza interna entre clústers.</p>
+<p>Ward propuso que la pérdida de información que se produce al integrar los distintos individuos en clusters puede medirse a través de la suma total de los cuadrados de las desviaciones entre cada punto (individuo) y la media del cluster en el que se integra. De tal forma que para que el proceso de clusterización resulte óptimo, en el sentido de que los grupos formados no distorsionen los datos originales, se desarrolla el siguiente criterio:</p>
+<p>En cada paso del análisis, considerar la posibilidad de la unión de cada par de grupos y optar por la fusión de aquellos dos grupos que menos incrementen la suma de los cuadrados de las desviaciones al unirse.</p>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-27">Table 4.1: </span>Tabla 3.0 Clústers inducidos por la función liga de ward
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+cluster
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5963
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3641
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1352
+</td>
+</tr>
+</tbody>
+</table>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>La gráfica anterior es un dendograma, el cual nos ilustra los arreglos hechos por el algoritmo de agrupamiento.</p>
+<p>Dado que el enfoque utilizado en este proyecto es el aglomerativo (Es tal que se inician con tantos clústers como existan observaciones en el experimento y cada observación es su propio grupo), en el nivel más bajo podemos identificar las observaciones en forma singular.</p>
+<p>En el siguiente paso, se unen las observaciones más cercanas (mas “parecidas”) de acuerdo a un criterio de distancia mínima, de tal forma que cada nodo es donde un grupo se fusionó con otro, y la distancia a la que se unen es la distancia máxima que existe entre entidades que forman el grupo.</p>
+<p>En los algoritmos jerárquicos, la persona que diseña el análisis es quién decide cual es la distancia máxima permitida entre aglomerados, en este caso, decidí que la distancia máxima permitida fuera de 7 unidades, lo que da paso a la creación de tres clústers.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Esta gráfica pone en distintos colores los grupos, de tal forma que los grupos sean evidentes.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>Esta figura es una representación gráfica de de las componentes principales del objeto analizado (Las dos variables que más variablidad aportan al análisis).</p>
+<p>En este caso, las componentes principales explican solo un 26.79% de la variabilidad de los puntos, esto era de esperarse ya que el análisis aquí propuesto es de datos de mucho mayor dimensión (cerca de 20 variables son las que utilizamos para agrupar).</p>
+<p>El hecho de que la variabilidad que se explica con la componentes principales sea tan baja, significa que existe muy baja correlación entre las variables explicativas, por lo que el análisis de mayor dimensión es un enfoque correcto.</p>
+<div id="exploracion-de-las-caracteristicas-socio-demograficas-por-cluster" class="section level2">
+<h2><span class="header-section-number">4.1</span> Exploración de las características socio-demográficas por clúster</h2>
+<div id="htmlwidget-351d254f26861e7a4e4e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-351d254f26861e7a4e4e">{"x":{"filter":"none","caption":"<caption>Tabla 3.1 Estadística descriptiva de las variables socio-demográficas<\/caption>","data":[[1,2,3],["1","1","1"],["03","06","06"],[51.3857118899883,47.0829442460862,50.8986686390533],[16.898600758354,13.8590525701514,13.8718123579052],[50,46,50],[40,42,45],[3.37665604561462,4.03982422411425,4.21967455621302],[1.78818059000405,1.75013543333891,2.01800860734233],[3,4,4],[2,4,4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Clúster<\/th>\n      <th>Moda en sexo<\/th>\n      <th>Moda en educación<\/th>\n      <th>Promedio de edad<\/th>\n      <th>Desviación estandard edad<\/th>\n      <th>Mediana de la edad<\/th>\n      <th>Moda de la edad<\/th>\n      <th>Promedio de integrantes<\/th>\n      <th>Desviación estandard de integrantes<\/th>\n      <th>Mediana de integrantes<\/th>\n      <th>Moda de integrantes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+</div>
+<div id="exploracion-de-las-caracteristicas-economico-financieras-por-cluster" class="section level2">
+<h2><span class="header-section-number">4.2</span> Exploración de las caracteristicas económico-financieras por clúster</h2>
+<div id="htmlwidget-4ca761beae446680e516" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4ca761beae446680e516">{"x":{"filter":"none","caption":"<caption>Tabla 3.2 Estadística descriptiva de las variables económico-financieras<\/caption>","data":[[1,2,3],[25098.9815529096,49498.6826146663,121181.570769231],[19896.5725193351,35816.4301559454,978359.419907777],[20895.6,40615.28,71782.24],[391.3,1864.64,7500],[519700.84,391890.86,35824113.33],[13621.6517910448,30905.8134798132,65194.7774112426],[7050.19150867111,16749.8995854339,50699.7346439641],[12904.89,27416.37,51855.34],[0,4375.26,7035.15],[62043.05,218763.84,829249.09],[1126.18977192688,2368.91780829442,4227.33749260355],[1061.7067896619,2568.96670475467,5306.95365596162],[900,1683.85,2696.445],[0,0,0],[10247.26,40068.87,90750]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Clúster<\/th>\n      <th>Promedio de ingreso<\/th>\n      <th>Desviación estandard ingreso<\/th>\n      <th>Mediana del ingreso<\/th>\n      <th>Ingreso Minimo<\/th>\n      <th>Ingreso Maximo<\/th>\n      <th>Promedio del gasto<\/th>\n      <th>Desviación estandard gasto<\/th>\n      <th>Mediana del gasto<\/th>\n      <th>Gasto Minimo<\/th>\n      <th>Gasto Maximo<\/th>\n      <th>Promedio del gasto en vivienda<\/th>\n      <th>Desviación estandard vivienda<\/th>\n      <th>Mediana del gasto en vivienda<\/th>\n      <th>Gasto en vivienda Minimo<\/th>\n      <th>Gasto en vivienda Maximo<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+</div>
+<div id="exploracion-de-las-caracteristicas-de-la-vivienda-por-cluster" class="section level2">
+<h2><span class="header-section-number">4.3</span> Exploración de las características de la vivienda por clúster</h2>
+<div id="htmlwidget-a3fdce6750d41ebf64c4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a3fdce6750d41ebf64c4">{"x":{"filter":"none","caption":"<caption>Tabla 3.1 Estadística descriptiva de las variables de vivienda<\/caption>","data":[[1,2,3],["1","1","1"],[21.1056515176924,19.2554243339742,21.9933431952663],[16.3656302761233,15.0331908920956,14.8691041805838],[18,15,20],[20,10,20],[3.47157471071608,4.08788794287284,4.9060650887574],[1.45155077418183,1.47375164702542,1.73334738735904],[3,4,5],[3,4,4],[1.92872715076304,2.26860752540511,2.6353550295858],[0.890773180983098,0.910153627919988,1.07223558095699],[2,2,3],[2,2,2],[0.621499245346302,0.990661906069761,1.41494082840237],[0.654856165819007,0.66911506771848,0.885033964674734],[1,1,1],[1,1,1],["1","1","1"],["4","4","4"],["8","8","8"],["2","3","3"],[3,3,3],["1","1","1"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Clúster<\/th>\n      <th>Moda del tipo de vivienda<\/th>\n      <th>Promedio de antiguedad<\/th>\n      <th>Desviación estandard antiguedad<\/th>\n      <th>Mediana de la antiguedad<\/th>\n      <th>Moda de la antiguedad<\/th>\n      <th>Promedio del numero de cuartos<\/th>\n      <th>Desviación estandard del número de cuartos<\/th>\n      <th>Mediana del número de cuartos<\/th>\n      <th>Moda del número de cuartos<\/th>\n      <th>Promedio del número de dormitorios<\/th>\n      <th>Desviación estándard del número de dormitorios<\/th>\n      <th>Mediana del número de dormitorios<\/th>\n      <th>Moda del número de dormitorios<\/th>\n      <th>Media del número de baños<\/th>\n      <th>Desviación estándard del número de baños<\/th>\n      <th>Mediana del número de baños<\/th>\n      <th>Moda del número de baños<\/th>\n      <th>Tenencia de cocina<\/th>\n      <th>Moda del tipo de tenencia de vivienda<\/th>\n      <th>Moda del tipo de pared<\/th>\n      <th>Moda del tipo de piso<\/th>\n      <th>Moda del combustible de la casa<\/th>\n      <th>Moda de la disponibilidad eléctrica<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,22]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+</div>
+<div id="conclusiones-del-agrupamiento-por-medio-de-un-modelo-jerarquico" class="section level2">
+<h2><span class="header-section-number">4.4</span> Conclusiones del agrupamiento por medio de un modelo jerárquico</h2>
+<div id="grupo-1" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Grupo 1</h3>
+<ul>
+<li>El clúster contiene 5963 miembros</li>
+<li>El sexo del jefe de familia más común es masculino.</li>
+<li>El nivel educativo más común es el de primaria incompleta, seguido muy de cerca por secundaria completa.</li>
+<li>El número de integrantes de la familia más común es de dos integrantes.</li>
+<li>La edad del jefe de familia más común es de 40 años.</li>
+<li>La mediana del ingreso mensual es de $6,965 mensuales.</li>
+<li>La mediana del gasto es de $4,301 mensuales.</li>
+<li>La mediana del gasto en vivienda es de $900 mensuales.</li>
+<li>El tipo de vivienda de una persona perteneciente a este clúster es el de una casa independiente.</li>
+<li>La vivienda es propia.</li>
+<li>La mediana de la antiguedad de la vivienda es de 18 años *Es una vivienda de 3 cuartos.</li>
+<li>La casa tiene dos dormitorios.</li>
+<li>Un baño completo.</li>
+<li>El piso es de cemento</li>
+<li>Las paredes de la casa son de Tabique, Ladrillo, block, piedra, cantera,cemento o concreto</li>
+<li>El combustible mas utilizado para los servicios del hogar es el gas en tanque.</li>
+<li>La casa dispone de luz eléctrica.</li>
+</ul>
+</div>
+<div id="grupo-2" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Grupo 2</h3>
+<ul>
+<li>El clúster contiene 3641 miembros.</li>
+<li>El sexo del jefe de familia más común es masculino</li>
+<li>El nivel educativo más común es secundaria completa.</li>
+<li>El número de integrantes de la familia más común es de cuatro integrantes.</li>
+<li>La edad del jefe de familia más común es de 42 años.</li>
+<li>La mediana del ingreso mensual es de $13538.42 mensuales.</li>
+<li>La mediana del gasto es de $9,138 mensuales.</li>
+<li>La mediana del gasto en vivienda es de $1,683.85 mensuales.</li>
+<li>El tipo de vivienda de una persona perteneciente a este clúster es el de una casa independiente.</li>
+<li>La vivienda es propia.</li>
+<li>La mediana de la antiguedad de la vivienda es de 15 años *La mediana de los cuartos de la vivienda es de 4 cuartos.</li>
+<li>La casa tiene dos dormitorios.</li>
+<li>Un baño completo.</li>
+<li>El piso es madera, mosaico u otro recumbrimiento.</li>
+<li>Las paredes de la casa son de Tabique, Ladrillo, block, piedra, cantera,cemento o concreto</li>
+<li>El combustible mas utilizado para los servicios del hogar es el gas en tanque.</li>
+<li>La casa dispone de luz eléctrica.</li>
+</ul>
+</div>
+<div id="grupo-3" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> Grupo 3</h3>
+<ul>
+<li>El grupo contiene 1352 miembros</li>
+<li>El sexo del jefe de familia más común es masculino</li>
+<li>El nivel educativo más común es profesional completa, seguido muy de serca de secundaria completa.</li>
+<li>El número de integrantes de la familia más común es de cuatro integrantes.</li>
+<li>La edad del jefe de familia más común es de 45 años.</li>
+<li>La mediana del ingreso mensual es de $23,927.41 mensuales.</li>
+<li>La mediana del gasto es de $17,285.11 mensuales.</li>
+<li>La mediana del gasto en vivienda es de $2696.445 mensuales.</li>
+<li>El tipo de vivienda de una persona perteneciente a este clúster es el de una casa independiente.</li>
+<li>La vivienda es propia.</li>
+<li>La mediana de la antiguedad de la vivienda es de 20 años *La mediana de los cuartos de la vivienda es de 5 cuartos.</li>
+<li>La casa tiene tres dormitorios.</li>
+<li>El promedio de baños completos es de 2.</li>
+<li>El piso es madera, mosaico u otro recumbrimiento.</li>
+<li>Las paredes de la casa son de Tabique, Ladrillo, block, piedra, cantera,cemento o concreto</li>
+<li>El combustible mas utilizado para los servicios del hogar es el gas en tanque.</li>
+<li>La casa dispone de luz eléctrica.</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04Jerarquico.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

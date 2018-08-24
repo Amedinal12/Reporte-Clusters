@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México</title>
+  <meta name="description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México" />
+  
+  <meta name="twitter:description" content="Analisis de cluster por el metodo jeráquico, y por el método de particiones alrededor de medioides aplicado en la segmentacion de mercado para tipificar la forma de vivienda actual de las observaciones pertenecientes a cada cluster" />
+  
+
+<meta name="author" content="Act. Andres Antonio Medina Landeros">
+
+
+<meta name="date" content="2018-08-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="abstracto.html">
+<link rel="next" href="datos.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Analisis de cluster aplicado en la segmentacion del mercado para la tipificacion de los productos de vivienda: El caso de Mexico</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="abstracto.html"><a href="abstracto.html"><i class="fa fa-check"></i><b>1</b> Abstracto</a></li>
+<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introducción</a></li>
+<li class="chapter" data-level="3" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>3</b> Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="datos.html"><a href="datos.html#descripcion-de-las-variables"><i class="fa fa-check"></i><b>3.1</b> Descripción de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html"><i class="fa fa-check"></i><b>4</b> Clústers Jerárquicos</a><ul>
+<li class="chapter" data-level="4.1" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-socio-demograficas-por-cluster"><i class="fa fa-check"></i><b>4.1</b> Exploración de las características socio-demográficas por clúster</a></li>
+<li class="chapter" data-level="4.2" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-economico-financieras-por-cluster"><i class="fa fa-check"></i><b>4.2</b> Exploración de las caracteristicas económico-financieras por clúster</a></li>
+<li class="chapter" data-level="4.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-de-la-vivienda-por-cluster"><i class="fa fa-check"></i><b>4.3</b> Exploración de las características de la vivienda por clúster</a></li>
+<li class="chapter" data-level="4.4" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#conclusiones-del-agrupamiento-por-medio-de-un-modelo-jerarquico"><i class="fa fa-check"></i><b>4.4</b> Conclusiones del agrupamiento por medio de un modelo jerárquico</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-1"><i class="fa fa-check"></i><b>4.4.1</b> Grupo 1</a></li>
+<li class="chapter" data-level="4.4.2" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-2"><i class="fa fa-check"></i><b>4.4.2</b> Grupo 2</a></li>
+<li class="chapter" data-level="4.4.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#grupo-3"><i class="fa fa-check"></i><b>4.4.3</b> Grupo 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><i class="fa fa-check"></i><b>5</b> Clústers por el metodo de Particiones alrededor de medioides</a><ul>
+<li class="chapter" data-level="5.1" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#estimacion-del-numero-de-grupo-por-el-metodo-de-las-silueta-promedio"><i class="fa fa-check"></i><b>5.1</b> Estimación del número de grupo por el método de las silueta promedio</a></li>
+<li class="chapter" data-level="5.2" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#exploracion-de-las-caracteristicas-socio-demograficas-por-cluster-1"><i class="fa fa-check"></i><b>5.2</b> Exploración de las características socio-demográficas por clúster</a></li>
+<li class="chapter" data-level="5.3" data-path="clusters-jerarquicos.html"><a href="clusters-jerarquicos.html#exploracion-de-las-caracteristicas-economico-financieras-por-cluster"><i class="fa fa-check"></i><b>5.3</b> Exploración de las características económico-financieras por clúster</a></li>
+<li class="chapter" data-level="5.4" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#exploracion-de-las-caracteristicas-de-la-vivienda-por-cluster-1"><i class="fa fa-check"></i><b>5.4</b> Exploración de las características de la vivienda por clúster</a></li>
+<li class="chapter" data-level="5.5" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#conclusiones-del-agrupamiento-por-medio-de-particiones-alrededor-de-medioides"><i class="fa fa-check"></i><b>5.5</b> Conclusiones del agrupamiento por medio de particiones alrededor de medioides</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#grupo-1-1"><i class="fa fa-check"></i><b>5.5.1</b> Grupo 1</a></li>
+<li class="chapter" data-level="5.5.2" data-path="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html"><a href="clusters-por-el-metodo-de-particiones-alrededor-de-medioides.html#grupo-2-1"><i class="fa fa-check"></i><b>5.5.2</b> Grupo 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>6</b> Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/AmedinalUrbi" target="blank">Publicado desde AmedinalUrbi</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis de clúster aplicado en la segmentación del mercado para la tipificación de los productos de vivienda: El caso de México</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduccion" class="section level1">
+<h1><span class="header-section-number">2</span> Introducción</h1>
+<p>La técnica de análisis de cluster ,análisis de conglomerados o segmentación de datos consiste en clasificar a los individuos en estudio formando grupos o conglomerados de elementos, tales que los elementos de cada conglomerado presenten cierto grado de homogeneidad con base en los valores adoptados sobre un conjunto de variables.</p>
+<p>El análisis de clusters tambien es utilizado pra formar estadísticas descriptivas para poner a prueba la hipótesis de que, dentro de los datos existen aglomeraciones naturales de distintos subgrupos.</p>
+<p>Cada grupo acumula objetos con propiedades suficientemente distintas. Para esto último es necesario introducir dos ideas clave, la del individuo (u objeto) que puede ser definida como un conjunto de mediciones de las variables que componen el estudio y la noción de similitud (o más bien dicho, de disimilitud) entre objetos la cual será la idea de distancia, es decir diremos que un objeto es más parecido a otro mientras más cerca esten.</p>
+<p>Cualquier método de agrupamiento intentará realizar la tarea asignada basado en la noción de distancia que le sea provista, la cuál dependerá de consideraciones fuera de los mismos datos (Es decir, si los datos provienen de un estudio médico, o económico requeriría distintas nociones de distancia según sea el caso).</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="abstracto.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="datos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02intro.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
